@@ -1,7 +1,7 @@
 import React, { useState, FormEvent, useEffect } from "react";
 import { FiChevronRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import api from "../../servies/api";
+import api from "../../services/api";
 
 import { Title, Form, Repositories, Error } from "./styles";
 import logo from "../../assets/logo.svg";

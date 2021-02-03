@@ -2,7 +2,7 @@ import React, { useState, FormEvent, useEffect } from "react";
 import { useRouteMatch } from "react-router-dom";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import api from "../../servies/api";
+import api from "../../services/api";
 
 import logo from "../../assets/logo.svg";
 
@@ -40,8 +40,8 @@ const Reposirory: React.FC = () => {
   useEffect(() => {
     async function loadData(): Promise<void> {
       const [respository, issues] = await Promise.all([
-        api.get<RepositoryItem[]>(`repos/${params.repository}`),
-        api.get<Issue>(`repos/${params.repository}/issues`),
+        api.get(`repos/${params.repository}`),
+        api.get(`repos/${params.repository}/issues`),
       ]);
 
       setRepository(respository.data);
